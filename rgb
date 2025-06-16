@@ -1,0 +1,81 @@
+<html>
+<head>
+<style>
+body {background-color: black;}
+h1   {color: white;
+margin: 15px;
+font-size: 60px;
+}
+a     {color: white;
+margin: 40px;
+font-size: 50px;
+}
+</style>
+</head>
+<body>
+<h1> GENERATE </h1>
+<div>
+<button onclick="action()"> Action </button>
+<a id="randomtext3">       </a>
+</div>
+<div>
+<button onclick="anatomy()"> Body Part </button>
+<a id="randomtext1">  </a>
+</div>
+<div>
+<button onclick="dynamic()"> Dynamic </button>
+<a id="randomtext2"> </a>
+</div>
+<div>
+<button onclick="action(), anatomy(), dynamic()"> Generate </button>
+<script type="text/javascript" charset="utf-8">
+var randomBodyParts = [
+        "Abdomen", "Right Ankle", "Left Ankle", "Anus","Right Arm", "Left Arm","Ball of the foot","Belly",
+        "Belly Button","Right Big Toe","Left Big Toe","Brain","Buttocks","Right Calf","Left Calf","Vertebrae",
+        "Cheek","Chin","Chest","Clavicle","Coccyx","Sacrum","Right Ear","LeftEar","Ear lobe","Right Elbow",
+        "Left Elbow","Eyes","Eyebrows","Eyelashes","Eyelids","Face","Feet","Finger",
+        "Right Foot", "Left Foot", "Forehead","Groin","Gums","Hair","Right Hand", "Left Hand", "Head","Heart",
+        "Right Heel", "Left Heel","Hips", "Right Hip", "Left Hip","Index Finger","Intestines","Jaw","Right Knee",
+        "Left Knee","Right Leg","Left Leg","Upper Lip", "Lower Lip","Mouth","Nails","Neck",
+        "Nipple","Nose","Nostrils","Palm","Pelvis","Pinky","Ribs","Scalp","Right Shin","Left Shin",
+        "Right Shoulder","Left Shoulder","Skull","Spine","Sternum","Teeth","Right Thigh",
+        "Left Thigh","Throat","Thumb", "Toe","Toenail","Tongue","Torso","Waist","Right Wrist", "Left Wrist", "Index Finger",
+        "Middle Finger", "Ring Finger", "Little Finger", "Genitals"
+        ];
+var randomDynamics = [
+"Slow", "Quick", "Soft", "Sharp", "Hard", "Sudden", "Sustained", "Accelerating", "Decelerating", "Rhythmic", "Arhythmic",
+        "Smooth", "Continuous", "Even", "Choppy" ,"Jagged", "Swaying", "Swinging", "Released", "Relaxed", "Shaky", "Shuddering", "Light",
+        "Heavy", "Energetic", "Passive", "Medium Energy", "Gentle", "Strong", "Flowing", "Hovering","Floppy", "Choppy", "Wobbly",
+        "Sinking"
+]
+var randomActions = [
+"Walk", "Run", "Turn", "Spin","Rise", "Lower","Gesture","Be Still", "Straighten",
+        "Bend", "Shift Weight Slightly","Shift Weight Majorly", "Gesture", "Balance", "Tilt", "Sprint", "Open", "Close", "Touch", "Skip", "Yank",
+        "Jump", "Leap", "Fall", "Curve", "Extend", "Flex", "Raise", "Shake", "Wave", "Bounce", "Draw Circle", "Draw Square", "Draw Triangle", "Scribble",
+        "Throw", "Balance On", "Reach", "Slash", "Dab", "Flick", "Punch", "Twist", "Wring", "Float", "Glide", "Press", "Hit", "Whip", "Beat", "Chop",
+        "Hang", "Dangle", "Sway", "Swoop", "Flutter"
+]
+function action() {
+          var randomtext3 = document.getElementById("randomtext3");
+          randomIndex3 = Math.ceil((Math.random()*randomActions.length-1));
+          newText = randomActions[randomIndex3];
+          randomtext3.innerHTML = newText;
+    };
+
+function anatomy(){
+          var randomtext1 = document.getElementById("randomtext1");
+          randomIndex1 = Math.ceil((Math.random()*randomBodyParts.length-1));
+          newText = randomBodyParts[randomIndex1];
+          randomtext1.innerHTML = newText;
+    };
+
+function dynamic(){
+          var randomtext2 = document.getElementById("randomtext2");
+          randomIndex2 = Math.ceil((Math.random()*randomDynamics.length-1));
+          newText = randomDynamics[randomIndex2];
+          randomtext2.innerHTML = newText;
+    };
+</script>
+</body>
+</html>
+

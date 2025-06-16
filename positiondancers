@@ -1,0 +1,22 @@
+<html>
+<body>
+<h1> multiple dancer positioning </h1>
+<canvas id="floorSpace" width="800" height="400" style="border:2px solid black"></canvas>
+<input type="number" id="numberOf" value="1">
+<button onclick="transform()"> Move </button>
+<script>
+var c = document.getElementById("floorSpace");
+var ctx = c.getContext("2d");
+function transform() {
+var x = document.getElementById("numberOf").value;
+ctx.clearRect(0,0,c.width,c.height);
+for (var i = 0; i < x; i++){
+ctx.beginPath();
+ctx.arc(Math.random()*c.width+3, Math.random()*c.height+3, 10, 0, 2 * Math.PI);
+ctx.fill();
+}
+}
+</script>
+</body>
+</html>
+

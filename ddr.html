@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+h {font-size: 80px}
+a {font-size: 50px
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h> Flat Directions </h>
+<div>
+<img src="chaos4.gif" height="300" width="300">
+<button class = "button" onclick="generatedirection()"> Steps: </button>
+<a id="singular"> </a>
+</div>
+<div style="width:800px; word-wrap: break-word; letter-spacing:10px">
+<a id="ddrimage"> </a>
+</div>
+<div>
+
+</div>
+<script>
+var arrows = ["&#8592", "&#8593", "&#8594", "&#8595", "&#8598", "&#8599", "&#8600", "&#8601", "&#8226"];
+function generatedirection()
+{
+var randomtext1 = document.getElementById("ddrimage");
+          randomIndex1 = Math.ceil((Math.random()*9)-1);
+          newText = arrows[randomIndex1];
+          randomtext1.innerHTML += newText;
+          var randomtext2 = document.getElementById("singular");
+          randomtext2.innerHTML = newText;
+          };
+</script>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<html>
+<body>
+<button onclick="drawU()"> Click </a>
+<canvas id="myCanvas" width="800" height="400" >
+</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+function drawU() {
+var randx1 = Math.floor(Math.random() * 800);
+var randy1 = Math.floor (Math.random() * 400);
+var randx2 = Math.floor(Math.random() * 800);
+var randy2 = Math.floor (Math.random() * 400);
+var randx3 = Math.floor(Math.random() * 800);
+var randy3 = Math.floor (Math.random() * 400);
+
+ctx.beginPath();
+ctx.clearRect(0,0,c.width,c.height);
+ctx.moveTo(randx1, randy1);
+ctx.quadraticCurveTo(randx2, randy2, randx3, randy3);
+ctx.stroke();}
+</script>
+
+</body>
+</html>
+

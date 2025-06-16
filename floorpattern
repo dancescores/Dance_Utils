@@ -1,0 +1,40 @@
+<html>
+<body>
+<h1> Floor Patterns </h1>
+<canvas id="myCanvas" width="800" height="400" style="border: 2px solid black" >
+</canvas>
+<div>
+<button onclick="drawU()"> Click </button>
+</div>
+<div>
+<a> Number of dancers </a>
+<input type="number" id="numberOfDancers" value="1">
+</div>
+<div>
+<a> Number of pathways </a>
+<input type="number" id="numberOfPaths" value="1">
+</div>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+function getRandomColour()
+{
+return Math.floor(Math.random()*16777215).toString(16);
+}
+function drawU() {
+var x = document.getElementById("numberOfPaths").value;
+var y = document.getElementById("numberOfDancers").value;
+ctx.clearRect(0,0,c.width,c.height);
+ctx.lineWidth = 2;
+ctx.beginPath();
+for (var i = 0; i < y; i++){
+ctx.moveTo(Math.random()*800, Math.random()*400);
+ctx.strokeStyle = "#"+getRandomColour();
+    for (var j = 0; j < x; j++){
+    ctx.quadraticCurveTo(Math.random()* 800,Math.random()* 400, Math.random()* 800, Math.random()* 400,);
+    ctx.stroke();}
+}}
+</script>
+</body>
+</html>
+
